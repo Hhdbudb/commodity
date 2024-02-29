@@ -1,0 +1,5 @@
+com\hailei\pojo\Commodity.class
+com\hailei\service\impl\CommodityServiceImpl.class
+com\hailei\service\CommodityService.class
+com\hailei\web\servlet\CommodityServlet.class
+com\hailei\mapper\CommodityMapper.class

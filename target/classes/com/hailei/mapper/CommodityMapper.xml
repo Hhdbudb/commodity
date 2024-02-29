@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hailei.mapper.CommodityMapper">
+
+    <resultMap id="commodityResultMap" type="commodity">
+        <result property="commodityName" column="commodity_name" />
+        <result property="publisherName" column="publisher_name" />
+    </resultMap>
+
+
+
+    <delete id="deleteByIds">
+        delete from tb_commodity where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+
+
+    </delete>
+    <!-- where commodity_name = #{commodity.commodityName}-->
+    <select id="selectByPageAndCondition" resultMap="commodityResultMap">
+        select *
+        from tb_commodity
+        <where>
+            <if test="commodity.commodityName != null and commodity.commodityName != '' ">
+                and  commodity_name like #{commodity.commodityName}
+            </if>
+
+            <if test="commodity.publisherName != null and commodity.publisherName != '' ">
+                and  publisher_name like #{commodity.publisherName}
+            </if>
+
+            <if test="commodity.status != null">
+                and  status = #{commodity.status}
+            </if>
+
+        </where>
+
+        limit #{begin} , #{size}
+
+    </select>
+    <select id="selectTotalCountByCondition" resultType="java.lang.Integer">
+
+        select count(*)
+        from tb_commodity
+        <where>
+            <if test="commodityName != null and commodityName != '' ">
+                and  commodity_name like #{commodityName}
+            </if>
+
+            <if test="publisherName != null and publisherName != '' ">
+                and  publisher_name like #{publisherName}
+            </if>
+
+            <if test="status != null">
+                and  status = #{status}
+            </if>
+
+        </where>
+
+    </select>
+
+</mapper>
