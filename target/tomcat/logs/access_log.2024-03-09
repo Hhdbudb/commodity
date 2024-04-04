@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [09/Mar/2024:18:33:31 +0800] "GET /commodity-case HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [09/Mar/2024:18:33:31 +0800] "GET /commodity-case/ HTTP/1.1" 200 940 http-bio-8080-exec-3 45
+0:0:0:0:0:0:0:1 - - [09/Mar/2024:18:33:31 +0800] "GET /commodity-case/css/login.css HTTP/1.1" 200 1933 http-bio-8080-exec-4 5
+0:0:0:0:0:0:0:1 - - [09/Mar/2024:18:33:31 +0800] "GET /commodity-case/imgs/xianyu.jpg HTTP/1.1" 200 17242 http-bio-8080-exec-5 5
+0:0:0:0:0:0:0:1 - - [09/Mar/2024:18:33:31 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-6 0

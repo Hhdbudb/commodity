@@ -7,7 +7,6 @@
         .el-table .warning-row {
             background: oldlace;
         }
-
         .el-table .success-row {
             background: #f0f9eb;
         }
@@ -204,14 +203,11 @@
             //当页面加载完成后，发送异步请求，获取数据
 
             this.selectAll();
-
         },
 
         methods: {
-
             // 查询分页数据
             selectAll(){
-
                 axios({
                     method:"post",
                     url:"http://localhost:8080/commodity-case/commodity/selectByPageAndCondition?currentPage="+this.currentPage+"&pageSize="+this.pageSize,
@@ -222,8 +218,6 @@
                     //设置总记录数
                     this.totalCount = resp.data.totalCount;
                 })
-
-
             },
 
             tableRowClassName({row, rowIndex}) {

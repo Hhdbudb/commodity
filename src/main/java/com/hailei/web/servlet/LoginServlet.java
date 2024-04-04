@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user",user);
 
-            String contextPath = request.getContextPath();
+            String contextPath = request.getContextPath();//获取当前应用的上下文路径，用于构造完整的URL地址
             response.sendRedirect(contextPath+"/commodity.html");
         }else {
             // 登录失败,

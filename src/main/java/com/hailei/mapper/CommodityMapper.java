@@ -34,7 +34,8 @@ public interface CommodityMapper {
      * 修改
      * @param commodity
      */
-    @Update("update tb_commodity set commodity_name = #{commodityName},publisher_name = #{publisherName},price = #{price},description = #{description},status = #{status} where id = #{id}")
+    @Update("update tb_commodity set commodity_name = #{commodityName},publisher_name = #{publisherName}" +
+            ",price = #{price},description = #{description},status = #{status} where id = #{id}")
     void updateById(Commodity commodity);
 
     /**

@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 public class UserServiceImpl implements UserService {
+    //获取Mybatis的SqlSessionFactory对象
     SqlSessionFactory factory = SqlSessionFactoryUtils.getSqlSessionFactory();
 
     /**

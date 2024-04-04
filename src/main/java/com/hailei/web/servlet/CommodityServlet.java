@@ -53,6 +53,8 @@ public class CommodityServlet extends BaseServlet{
 
         //3. 响应成功的标识
         response.getWriter().write("success");
+        //是在执行完相应的方法后，向客户端返回了一个 "success" 字符串。
+        // 这行代码的作用是将 "success" 字符串作为响应内容写入到 HTTP 响应的输出流中，最终发送给客户端。
     }
 
     /**

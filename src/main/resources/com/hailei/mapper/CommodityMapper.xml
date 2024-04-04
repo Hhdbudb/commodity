@@ -8,16 +8,11 @@
         <result property="commodityName" column="commodity_name" />
         <result property="publisherName" column="publisher_name" />
     </resultMap>
-
-
-
     <delete id="deleteByIds">
         delete from tb_commodity where id in
         <foreach collection="ids" item="id" separator="," open="(" close=")">
             #{id}
         </foreach>
-
-
     </delete>
     <!-- where commodity_name = #{commodity.commodityName}-->
     <select id="selectByPageAndCondition" resultMap="commodityResultMap">
@@ -35,11 +30,8 @@
             <if test="commodity.status != null">
                 and  status = #{commodity.status}
             </if>
-
         </where>
-
         limit #{begin} , #{size}
-
     </select>
     <select id="selectTotalCountByCondition" resultType="java.lang.Integer">
 
