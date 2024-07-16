@@ -74,7 +74,7 @@ public class CommodityServlet extends BaseServlet{
         int id = JSON.parseObject(params,int.class);
 
 
-        //2. 调用service添加
+        //2. 调用service删除
         commodityService.deleteById(id);
 
         //3. 响应成功的标识
